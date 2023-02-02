@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 AAAAAA
 ###hooooola
+=======
+asasasasasAAA###hooooola
+>>>>>>> develop
 #hello
 # Changelog
 All notable changes to this project will be documented in this file.
