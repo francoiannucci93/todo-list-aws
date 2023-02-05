@@ -5,16 +5,15 @@ from moto import mock_dynamodb
 import os
 import json
 
+
 @mock_dynamodb
-
-
 class TestDatabaseFunctions(unittest.TestCase):
     def setUp(self):
         print ('---------------------')
         print ('Start: setUp')
         warnings.filterwarnings(
             "ignore",
-            category=ResourceWarning,
+            category=DeprecationWarning,
             message="unclosed.*<socket.socket.*>")
         warnings.filterwarnings(
             "ignore",
@@ -57,7 +56,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertIn(tableName, self.table.name)
         # self.assertIn('todoTable', self.table_local.name)
         print ('End: test_table_exists')
-        
+
     def test_put_todo(self):
         print ('---------------------')
         print ('Start: test_put_todo')
@@ -103,8 +102,7 @@ class TestDatabaseFunctions(unittest.TestCase):
             self.text,
             responseGet['text'])
         print ('End: test_get_todo')
-    
-    
+
     def test_list_todo(self):
         print ('---------------------')
         print ('Start: test_list_todo')
@@ -133,12 +131,11 @@ class TestDatabaseFunctions(unittest.TestCase):
         idItem = json.loads(responsePut['body'])['id']
         print ('Id item:' + idItem)
         result = update_item(idItem, updated_text,
-                            "false",
-                            self.dynamodb)
+                             "false",
+                             self.dynamodb)
         print ('Result Update Item:' + str(result))
         self.assertEqual(result['text'], updated_text)
         print ('End: test_update_todo')
-
 
     def test_update_todo_error(self):
         print ('---------------------')
@@ -172,7 +169,6 @@ class TestDatabaseFunctions(unittest.TestCase):
                 "",
                 self.dynamodb))
         print ('End: atest_update_todo_error')
-
 
     def test_delete_todo(self):
         print ('---------------------')
