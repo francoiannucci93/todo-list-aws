@@ -137,7 +137,6 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertEqual(result['text'], updated_text)
         print ('End: test_update_todo')
 
-
     def test_update_todo_error(self):
         print ('---------------------')
         print ('Start: atest_update_todo_error')
@@ -195,14 +194,15 @@ class TestDatabaseFunctions(unittest.TestCase):
         # Testing file functions
         self.assertRaises(TypeError, delete_item("", self.dynamodb))
         print ('End: test_delete_todo_error')
-    
+
     def test_get_table(self):
         print ('---------------------')
         print ('Start: test_get_table')
         from src.todoList import get_table
         table = get_table(None)
-        print ('Table name:' +table.name)
+        print ('Table name:' + table.name)
         print ('End: test_get_table')
+
 
 if __name__ == '__main__':
     unittest.main()
