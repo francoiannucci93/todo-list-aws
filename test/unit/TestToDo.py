@@ -123,7 +123,6 @@ class TestDatabaseFunctions(unittest.TestCase):
         print ('Start: test_update_todo')
         from src.todoList import put_item
         from src.todoList import update_item
-        from src.todoList import get_item
         updated_text = "Aprender más cosas que DevOps y Cloud en la UNIR"
         # Testing file functions
         # Table mock
