@@ -93,7 +93,7 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         self.assertEqual(
-            jsonbody['text'], "Integration text example - GET", "Error API {url}"
+            jsonbody['text'], "Integration text example - GET", "{url}"
         )
         # Test GET TODO
         url = BASE_URL+"/todos/"+ID_TODO
@@ -131,7 +131,7 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         self.assertEqual(
-            jsonbody['text'], "Integration text example - Initial", "Error en la petición API a {url}"
+            jsonbody['text'], "Integration text example - Initial", "{url}"
         )
         # Update TODO
         url = BASE_URL+"/todos/" + ID_TODO
@@ -147,7 +147,7 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         self.assertEqual(
-            json_response['text'], "Integration text example - Modified", "Error en la petición API a {url}"
+            json_response['text'], "Integration text example - Modified", "{url}"
         )
         # Test GET TODO
         url = BASE_URL+"/todos/"+ID_TODO
@@ -158,7 +158,7 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         self.assertEqual(
-            json_response['text'], "Integration text example - Modified", "Error en la petición API a {url}"
+            json_response['text'], "Integration text example - Modified", "{url}"
         )
         # Delete TODO to restore state
         response = requests.delete(url)
@@ -185,7 +185,7 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         self.assertEqual(
-            jsonbody['text'], "Integration text example - Initial", "Error en la petición API a {url}"
+            jsonbody['text'], "Integration text example - Initial", "{url}"
         )
         # Delete TODO to restore state
         response = requests.delete(url + '/' + ID_TODO)
