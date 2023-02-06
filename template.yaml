@@ -104,7 +104,7 @@ Resources:
         - AttributeName: id
           KeyType: HASH
       ProvisionedThroughput: 
-        ReadCapacityUnits: 1ls
+        ReadCapacityUnits: 1
         WriteCapacityUnits: 1
 
 
@@ -130,4 +130,3 @@ Outputs:
   DeleteTodoApi:
     Description: "API Gateway endpoint URL for ${opt:stage} stage for Delete TODO"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/todos/{id}"
-
