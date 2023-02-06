@@ -14,7 +14,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         print ('Start: setUp')
         warnings.filterwarnings(
             "ignore",
-            category=ResourceWarning,
+            category=DeprecationWarning,
             message="unclosed.*<socket.socket.*>")
         warnings.filterwarnings(
             "ignore",
