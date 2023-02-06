@@ -2,7 +2,6 @@ import warnings
 import unittest
 import boto3
 from moto import mock_dynamodb
-import sys
 import os
 import json
 
@@ -52,12 +51,12 @@ class TestDatabaseFunctions(unittest.TestCase):
         # self.assertTrue(self.table_local)  # check if we got a result
 
         print('Table name:' + self.table.name)
-        tableName = os.environ['DYNAMODB_TABLE'];
+        tableName = os.environ['DYNAMODB_TABLE']
         # check if the table name is 'ToDo'
         self.assertIn(tableName, self.table.name)
         # self.assertIn('todoTable', self.table_local.name)
         print ('End: test_table_exists')
-        
+
     def test_put_todo(self):
         print ('---------------------')
         print ('Start: test_put_todo')
@@ -103,7 +102,7 @@ class TestDatabaseFunctions(unittest.TestCase):
             self.text,
             responseGet['text'])
         print ('End: test_get_todo')
-    
+
     def test_list_todo(self):
         print ('---------------------')
         print ('Start: test_list_todo')
@@ -118,7 +117,6 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertTrue(len(result) == 1)
         self.assertTrue(result[0]['text'] == self.text)
         print ('End: test_list_todo')
-
 
     def test_update_todo(self):
         print ('---------------------')
