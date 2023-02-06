@@ -131,8 +131,8 @@ class TestDatabaseFunctions(unittest.TestCase):
         idItem = json.loads(responsePut['body'])['id']
         print ('Id item:' + idItem)
         result = update_item(idItem, updated_text,
-                            "false",
-                            self.dynamodb)
+                             "false",
+                             self.dynamodb)
         print ('Result Update Item:' + str(result))
         self.assertEqual(result['text'], updated_text)
         print ('End: test_update_todo')
