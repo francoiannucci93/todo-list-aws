@@ -14,11 +14,9 @@ DEFAULT_TIMEOUT = 2  # in secs
 @pytest.mark.api
 class TestApi(unittest.TestCase):
 
-
     def setUp(self):
         self.assertIsNotNone(BASE_URL, "URL no configurada")
         self.assertTrue(len(BASE_URL) > 8, "URL no configurada")
-
 
     def test_api_listtodos(self):
         print('---------------------------------------')
@@ -38,7 +36,7 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         self.assertEqual(
-            jsonbody['text'], "Error en la petición API a {url}"
+            jsonbody['text'], "Integration text example", "Error en la petición API a {url}"
         )
         # List
         url = BASE_URL+"/todos"
