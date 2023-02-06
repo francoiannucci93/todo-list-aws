@@ -9,9 +9,7 @@ capabilities = "CAPABILITY_IAM"
 parameter_overrides = "Stage=\"default\""
 image_repositories = []
 confirm_changeset = true
-confirm_changeset = true
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-13g7rjwwb2q48"
-disable_rollback = true
 
 [staging]
 [staging.deploy]
@@ -24,7 +22,6 @@ parameter_overrides = "Stage=\"staging\""
 image_repositories = []
 confirm_changeset = true
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-13g7rjwwb2q48"
-disable_rollback = true
 
 [production]
 [production.deploy]
@@ -37,4 +34,3 @@ parameter_overrides = "Stage=\"production\""
 image_repositories = []
 confirm_changeset = true
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-13g7rjwwb2q48"
-disable_rollback = true
